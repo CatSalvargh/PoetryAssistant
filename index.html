@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="SaaS/main.css">
+    <link rel="shortcut icon" href="#" /> <!--favicon-->
     <title>Poetry Gernerator </title>
 </head>
 <body>
@@ -20,12 +21,19 @@
      <section class="hero">
         <div class="container grid">
             <div class="hero-text">
-                <h2 class="tittle-large">Poetry Generator</h2>
-                <p class="txt-intro"></p>
-            
+                <h3 class="tittle-large">Poetry Generator</h3>
+
+                <form method="POST" action="http://localhost/poetryAssistant_php/includes/handler.php">
+                <!--onsubmit="return validate() // "======-->
+                        <label for="userWord">Word</label>
+                        <input type="text" name="userWord" id="userWord" placeholder="Please type in a word"><br>
+                        <input type="submit" name="submit" id="submit" value="Submit" style="display:inline; padding: 3px 15px;">
+                </form>
+                
             <a href="" class="btn btn--secondary" style="display:inline; padding: 3px 15px; border: 1px solid blue; border-radius: 20px; text-decoration: none;">Get Rhymes</a>
             <a href="" class="btn btn--primary" style="display:inline; padding: 3px 15px; border: 1px solid blue; border-radius: 20px; text-decoration: none;">Get Alliterations</a>
             <p class="result">The result will show up here! It's just a word for no, but bear with me</p>
+            <p class="resulting-array"></p>
             </div>
         </div>     
     
