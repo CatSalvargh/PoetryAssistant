@@ -17,19 +17,20 @@ function renderHTML() {
     result = [];
     let updateHTML = '';
     findMatchingWords();
-    document.querySelector('.result').innerHTML = `Your word is: ${toTitleCase(userWord)} <br><br> Here are some words that rhyme with it: <br><br>${result}`;
+
+    document.getElementById('result').innerHTML = `Your word is: ${toTitleCase(userWord)} <br><br> Here are some words that rhyme with it: <br><br>`;
 
     result.forEach((word) => {
-        updateHTML += `<li>${toTitleCase(word)}</li>`
+        updateHTML += `<li class="matching-word">${toTitleCase(word)}</li>`
     })
 
-    document.querySelector('.result-list').innerHTML = updateHTML;
+    document.querySelector('.final-list').innerHTML = updateHTML;
 }
 
 
-//called by renderHTML to find matching words (no dupes) and return them in an array
+//find matching words and return them (no dupes) in an array
 function findMatchingWords(){
-    userWord = document.getElementById('userWord').value;
+    userWord = document.getElementById('userWord').value.toLowerCase();
     if (userWord == ''){
         alert('Please enter a word');
     } else{
@@ -37,13 +38,12 @@ function findMatchingWords(){
         let rymhingWords = dictionary.findRows(userWordph, 'ph-end-2');
       
         rymhingWords.forEach(wordArr => {
-            console.log(wordArr.arr[0], result.includes(wordArr.arr[0]));
             if (!result.includes(wordArr.arr[0])){
                 if (userWord != wordArr.arr[0]){
                 result.push((wordArr.arr[0]));
                 }
             }
-    });
+        });
     }
     return result;
 }
@@ -53,7 +53,7 @@ function toTitleCase(str){
     str = str.split('');
     let titleStr = [str[0].toUpperCase()];
     for (let i = 1; i < str.length; i++) {
-        titleStr += str[i]
+        titleStr += str[i].toLowerCase();
     }
     return titleStr;
 }

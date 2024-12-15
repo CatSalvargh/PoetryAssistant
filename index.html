@@ -4,40 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="SaaS/main.css">
+    <link rel="stylesheet" href="style/styles.css">
     <link rel="shortcut icon" href="#" /> <!--favicon-->
-    <title>Poetry Gernerator </title>
+    <title>Poetry Generator </title>
 </head>
 <body>
     <header class="main-header"> 
-        <div class="container grid">
-            <div class="logo col">
-                <h1 class="logo-text" style="color:white; background-color: blueviolet;">Poetizer</h1>
-            </div>
+        <div class="header-container">
+                <h1 class="logo-text">Poetizer</h1>
         </div>
     </header>
 
-    <!-- ===== Hero Area ======-->
+    <!-- ===== Hero Area ====== -->
      <section class="hero">
-        <div class="container grid">
-            <div class="hero-text">
-                <h3 class="tittle-large">Poetry Generator</h3>
-
-                    <label for="userWord">Word</label>
-                    <input type="text" name="userWord" id="userWord" placeholder="Please type in a word"><br>
-                    <input type="submit" name="submit" id="submit" value="Submit" onclick="renderHTML()" style="display:inline; padding: 3px 15px;">
-                
-            <a href="" class="btn btn--secondary" style="display:inline; padding: 3px 15px; border: 1px solid blue; border-radius: 20px; text-decoration: none;">Get Rhymes</a>
-            <a href="" class="btn btn--primary" style="display:inline; padding: 3px 15px; border: 1px solid blue; border-radius: 20px; text-decoration: none;">Get Alliterations</a>
-            <p class="result">The result will show up here! It's just a word for no, but bear with me</p>
-            <div class="final-result">
-                <ul class="result-list"></ul>
+            <h3 class="tittle-large">Poetry Generator</h3>
+            <div class="hero-container">
+                <label for="userWord">Your word goes here:</label>
+                <input type="text" name="userWord" id="userWord" placeholder="Please type in a word"><br>
+                <input type="submit" name="submit" id="submit" value="Submit" onclick="renderHTML()">           
+                <a href="" class="btn btn--primary">Alliterations</a>
+                <a href="" class="btn btn--secondary">Rhymes</a>
             </div>
+            <div class="result-container">
+                <p id="result"></p>
+                <ul class="final-list"></ul>
             </div>
         </div>     
-    
-        </div>
-
     </section>
 
     <!-- Libraries -->
