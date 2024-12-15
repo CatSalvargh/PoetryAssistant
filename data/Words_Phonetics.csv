@@ -1,4 +1,4 @@
-﻿word,phonetic,ph-end-3,ph-end-2
+﻿word,phonetic-sound,ph-end-3,ph-end-2
 see,siː,siː,iː
 tree,triː,riː,iː
 day,deɪ,deɪ,eɪ
@@ -81,10 +81,10 @@ rubout,ɹəbaʊt,aʊt,ʊt
 runabout,ɹənəbaʊt,aʊt,ʊt
 thereabouts,ðɛɹəbaʊts,ʊts,ts
 turnabout,tɝnəbaʊt,aʊt,ʊt
-whereabouts,"hwɛɹəbaʊts, wɛɹəbaʊts",ʊts,ts
+whereabouts,"hwɛɹəbaʊts,wɛɹəbaʊts",ʊts,ts
 alai,əlaɪ,laɪ,aɪ
 alkali,æɫkəlaɪ,laɪ,aɪ
-ally,"ælaɪ, əlaɪ",laɪ,aɪ
+ally,"ælaɪ,əlaɪ",laɪ,aɪ
 alveoli,æɫviəlaɪ,laɪ,aɪ
 apply,əplaɪ,laɪ,aɪ
 belie,bɪlaɪ,laɪ,aɪ
@@ -104,13 +104,13 @@ flye,flaɪ,laɪ,aɪ
 gadfly,ɡædflaɪ,laɪ,aɪ
 hoverfly,həvɝflaɪ,laɪ,aɪ
 imply,ɪmplaɪ,laɪ,aɪ
-july,"dʒulaɪ, dʒəlaɪ",laɪ,aɪ
+july,"dʒulaɪ,dʒəlaɪ",laɪ,aɪ
 lai,laɪ,laɪ,aɪ
 lie,laɪ,laɪ,aɪ
 lorelei,ɫɔɹɪlaɪ,laɪ,aɪ
 ly,laɪ,laɪ,aɪ
 lye,laɪ,laɪ,aɪ
-maglaj,"mæɡlaɪ, mɑɡlaɪ",laɪ,aɪ
+maglaj,"mæɡlaɪ,mɑɡlaɪ",laɪ,aɪ
 mcfly,məkflaɪ,laɪ,aɪ
 misapply,mɪsəplaɪ,laɪ,aɪ
 multiply,məɫtəplaɪ,laɪ,aɪ
@@ -123,8 +123,8 @@ oversupply,oʊvɝsəplaɪ,laɪ,aɪ
 ply,plaɪ,laɪ,aɪ
 poli,poʊlaɪ,laɪ,aɪ
 reapply,ɹiəplaɪ,laɪ,aɪ
-rely,"ɹilaɪ, ɹɪlaɪ",laɪ,aɪ
-reply,"ɹiplaɪ, ɹɪplaɪ",laɪ,aɪ
+rely,"ɹilaɪ,ɹɪlaɪ",laɪ,aɪ
+reply,"ɹiplaɪ,ɹɪplaɪ",laɪ,aɪ
 resupply,ɹisəplaɪ,laɪ,aɪ
 seelye,silaɪ,laɪ,aɪ
 shoofly,ʃuflaɪ,laɪ,aɪ
@@ -138,3 +138,5 @@ underlie,əndɝlaɪ,laɪ,aɪ
 underly,əndɝlaɪ,laɪ,aɪ
 walleye,wɔlaɪ,laɪ,aɪ
 westleigh,wɛstlaɪ,laɪ,aɪ
+pray,preɪ,reɪ,eɪ
+prest,prɛst,ɛst,st

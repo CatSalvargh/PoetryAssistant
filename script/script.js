@@ -9,32 +9,45 @@ function preload(){
 
 function setup() {
     createCanvas(600, 600);
+}
+
+//function called on submit click, to check for words and update the html on the result area
+function renderHTML() {
     result = [];
-    //normalize words to avoid case sensitivity errors
-    userWord = 'flush'.toLowerCase();
+    let updateHTML = '';
     findMatchingWords();
- 
-    //Final Outout:
-    document.querySelector('.result').innerHTML = `Your word is: ${toTitleCase(userWord)} <br><br> Here are some words that rhyme with it: <br><br> ${result}`;
+    document.querySelector('.result').innerHTML = `Your word is: ${toTitleCase(userWord)} <br><br> Here are some words that rhyme with it: <br><br>${result}`;
+
+    result.forEach((word) => {
+        updateHTML += `<li>${toTitleCase(word)}</li>`
+    })
+
+    document.querySelector('.result-list').innerHTML = updateHTML;
 }
 
+
+//called by renderHTML to find matching words (no dupes) and return them in an array
 function findMatchingWords(){
-    //userW will be the input from user // dataW will be determined by matching the userW by itenerating through the words in the dictionary
-    let userWordph = (dictionary.findRow(userWord, 'word')).getString('ph-end-2');  
-    rymhingWords = dictionary.findRows(userWordph, 'ph-end-2');
-
-    rymhingWords.forEach(word => {
-        console.log(rymhingWords[0],  word.arr[0]);
-        console.log(rymhingWords[0].arr[0],  word.arr[0]);
-        if(rymhingWords[0].arr[0] !== word.arr[0]){
-         result.push(toTitleCase(word.arr[0]));
-        }
+    userWord = document.getElementById('userWord').value;
+    if (userWord == ''){
+        alert('Please enter a word');
+    } else{
+        let userWordph = (dictionary.findRow(userWord, 'word')).getString('ph-end-2');  
+        let rymhingWords = dictionary.findRows(userWordph, 'ph-end-2');
+      
+        rymhingWords.forEach(wordArr => {
+            console.log(wordArr.arr[0], result.includes(wordArr.arr[0]));
+            if (!result.includes(wordArr.arr[0])){
+                if (userWord != wordArr.arr[0]){
+                result.push((wordArr.arr[0]));
+                }
+            }
     });
+    }
     return result;
-    //check for duplicates/amend if
 }
 
-//End result to TitleCase
+//Helper function to show result as TitleCase
 function toTitleCase(str){
     str = str.split('');
     let titleStr = [str[0].toUpperCase()];
@@ -43,14 +56,3 @@ function toTitleCase(str){
     }
     return titleStr;
 }
-
-//validate form input
-function validate() {
-    let userWord = document.getElementById('userWord');
-
-    if (userWord.value == ''){
-        alert('Please enter a word');
-    }
-
-}
-
