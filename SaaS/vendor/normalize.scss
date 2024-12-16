@@ -24,8 +24,11 @@
    */
   
   body {
-    margin: 0;
+    padding: 5vh;
     background: linear-gradient($primary, $secondary);
+    background: url(/assets/waterdrop-6905894_1920.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
   }
   
   /**
@@ -42,7 +45,7 @@
    */
   
   h1 {
-    font-size: 2em;
+    font-size: 3em;
     margin: 0.67em 0;
   }
   

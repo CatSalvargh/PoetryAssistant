@@ -9,21 +9,22 @@
     <title>Poetry Generator </title>
 </head>
 <body>
-    <header class="main-header"> 
+    <header class="main-header">
         <div class="header-container">
-                <h1 class="logo-text">Poetizer</h1>
+                <h1 class="logo-text"> Pen-Pal </h1>
         </div>
     </header>
 
     <!-- ===== Hero Area ====== -->
      <section class="hero">
-            <h3 class="tittle-large">Poetry Generator</h3>
+            <h2 class="tittle-large"> Poetry Generator </h2>
             <div class="hero-container">
                 <label for="userWord">Your word goes here:</label>
-                <input type="text" name="userWord" id="userWord" placeholder="Please type in a word"><br>
+                <input type="text" name="userWord" id="userWord" placeholder="Please type in a word" autocomplete="on"><br>
                 <input type="submit" name="submit" id="submit" value="Submit" onclick="renderHTML()">           
                 <a href="" class="btn btn--primary">Alliterations</a>
                 <a href="" class="btn btn--secondary">Rhymes</a>
+                <a href="" class="btn btn--third">Poem of the day</a>
             </div>
             <div class="result-container">
                 <p id="result"></p>
