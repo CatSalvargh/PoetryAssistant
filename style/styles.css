@@ -422,15 +422,12 @@ label {
   grid-area: 2/1/2/-1;
 }
 
-#submit {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
-  grid-area: 3/3/3/5;
+.start-clear {
   background: -webkit-gradient(linear, left top, left bottom, from(rgb(145, 87, 203)), to(rgb(67, 17, 100)));
   background: linear-gradient(rgb(145, 87, 203), rgb(67, 17, 100));
   width: 2fr;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
+  grid-column: auto/span 2;
 }
 
 .btn {
@@ -459,7 +456,7 @@ label {
   grid-area: 4/5/4/-1;
 }
 
-#submit, #userWord, .btn {
+.start-clear, #userWord, .btn {
   padding: 0 3rem;
   height: 2rem;
   border-radius: 5px;

@@ -6,16 +6,17 @@ label
 #userWord
     grid-area: 2 / 1 / 2 / -1
 
-#submit
-    grid-area: 3 / 3 / 3 / 5
+.start-clear
     background: linear-gradient($primary,$accent-dark)
     width: 2fr
-    color: white
+    color: rgba(255, 255, 255, 0.8)
+    grid-column: auto / span 2
+
 
 .btn
     grid-area: 4 / 1 / 4 / -1
     text-decoration: none
-    color: $accent-dark
+    color:  $accent-dark
 
 .btn--primary
     grid-area: 4 / 1 / 4 / 3
@@ -26,7 +27,7 @@ label
 .btn--third
     grid-area: 4 / 5 / 4 / -1
 
-#submit, #userWord, .btn
+.start-clear, #userWord, .btn
     padding: 0 3rem
     height: 2rem
     border-radius: 5px

@@ -1,59 +1,154 @@
-let dictionary;
-let result;
-let userWord;
-let rymhingWords;
-
-function preload(){
-	dictionary = loadTable('./data/Words_Phonetics.csv', 'csv', 'header');
-    //Headers: word phonetic ph-end-3 ph-end-2
-}
-
-function setup() {
-    createCanvas(600, 600);
-}
-
-//function called on submit click, to check for words and update the html on the result area
-function renderHTML() {
-    result = [];
-    let updateHTML = '';
-    findMatchingWords();
-
-    document.getElementById('result').innerHTML = `Your word is: ${toTitleCase(userWord)} <br><br> Here are some words that rhyme with it: <br><br>`;
-
-    result.forEach((word) => {
-        updateHTML += `<li class="matching-word">${toTitleCase(word)}</li>`
-    })
-
-    document.querySelector('.final-list').innerHTML = updateHTML;
-}
+import { Queue } from "../data/queue.js"; 
+import { kickOff } from "./fetchData.js";
 
 
-//find matching words and return them (no dupes) in an array
-function findMatchingWords(){
-    userWord = document.getElementById('userWord').value.toLowerCase();
-    if (userWord == ''){
-        alert('Please enter a word');
-    } else{
-        let userWordph = (dictionary.findRow(userWord, 'word')).getString('ph-end-2');  
-        let rymhingWords = dictionary.findRows(userWordph, 'ph-end-2');
+const rhymes = new Queue;
+const userInput = document.getElementById('userWord');
+        
+window.start = function() {
+
+        if (!userInput.value){
+                 alert('Please type in a word to start!');
+        } else {
+                kickOff(rhymes)
+        }
       
-        rymhingWords.forEach(wordArr => {
-            if (!result.includes(wordArr.arr[0])){
-                if (userWord != wordArr.arr[0]){
-                result.push((wordArr.arr[0]));
-                }
-            }
-        });
-    }
-    return result;
+        userInput.value = '';
+
 }
 
-//Helper function to show result as TitleCase
-function toTitleCase(str){
-    str = str.split('');
-    let titleStr = [str[0].toUpperCase()];
-    for (let i = 1; i < str.length; i++) {
-        titleStr += str[i].toLowerCase();
-    }
-    return titleStr;
-}
+userInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter'){
+                document.getElementById('submit').click()
+        }
+  } );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//end of kick off
+
+// import { Queue } from "../data/queue.js"; 
+
+// const result = []
+
+// function renderHTML() {
+//         const rhymes = new Queue;
+//         async function fetchData() {
+//             const input = document.getElementById('userWord').value.toLowerCase();
+//             const url1 = 'dictionary.json'
+//             const url2 = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
+
+//             try {
+//                 const dictResponse = await fetch(url1)
+//                 .then(res => {
+//                     const dictionary = res.json();
+//                     return dictionary
+//                 });
+
+//                 const dictionary = dictResponse;
+
+//                 dictionary.forEach(word =>{            
+//                     fetchDictionary(word.word)
+//                 });
+
+//                 const userResponse = await fetch(url2)
+//                 .then(res => {
+//                     const userdata = res.json();
+//                     return userdata
+//                 });
+
+//                 const userData = userResponse;
+
+//                 findRhymes(result, userData);
+//                 let loop = rhymes.size();
+
+//                 for (let i = 0; i < loop ; i++){
+//                     document.querySelector('ul').insertAdjacentHTML("beforeend", `<li> ${rhymes.items[rhymes.front]} </li>`);
+//                     rhymes.dequeue();
+//                 }
+
+//                 rhymes.print();
+//                 console.log(rhymes.isEmpty());
+
+//             } catch (error) {
+//                 console.log('error caught!');
+//                 console.log(error);
+//             }
+//         }
+
+//         fetchData();
+
+//         function findRhymes(arr, userArr) {
+//             const userWordPh = userArr[0].phonetic.slice(-3, -1);
+
+//             arr.forEach(wordArr => {
+//                 const dataWordPh = wordArr[0].phonetic.slice(-3, -1);
+//                 if (userWordPh == dataWordPh) {
+//                     rhymes.enqueue(wordArr[0].word);
+//                 }
+//             });
+
+//             rhymes.print();
+//             return rhymes;
+//         } 
+
+//         async function fetchDictionary(word) {
+            
+//             try {
+//                 fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+//                 .then(res => res.json()).then( data => {
+//                     result.push(data)
+//                 })
+//             } catch (error) {
+//                 console.log('aargh');
+//             }
+
+//             return result
+//         }
+
+// }
+
+
