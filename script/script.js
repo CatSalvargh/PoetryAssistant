@@ -1,16 +1,16 @@
-import { Queue } from "../data/queue.js"; 
+import { Queue } from "./queue.js"; 
 import { kickOff } from "./fetchData.js";
 
-
 const rhymes = new Queue;
+const synonyms = new Queue;
 const userInput = document.getElementById('userWord');
-        
-window.start = function() {
+
+window.start = function(whattoDo) {
+        document.getElementById('rhymes').innerHTML = '';
 
         if (!userInput.value){
                  alert('Please type in a word to start!');
-        } else {
-                kickOff(rhymes)
+        }  else {kickOff(rhymes, synonyms, whattoDo)
         }
       
         userInput.value = '';

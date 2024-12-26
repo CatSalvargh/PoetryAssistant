@@ -2,6 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,sass
 formhandler.php
 prepros.config
+pseudo
 
 ### Sass ###
 .sass-cache/

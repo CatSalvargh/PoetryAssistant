@@ -21,18 +21,19 @@
             <div class="hero-container">
                 <label for="userWord">Your word goes here:</label>
                 <input type="text" name="userWord" id="userWord" placeholder="Type in a word" autocomplete="on"><br>
-                <button id="submit" class="start-clear" onclick="start()" >Submit</button> 
+                <button id="submit" class="start-clear" onclick="start('rhymes')" >Submit</button> 
                 <button id="next" class="start-clear" onclick="alert('works')" >Next word</button>              
                 <a href="" class="btn btn--primary">Alliterations</a>
                 <a href="" class="btn btn--secondary">Rhymes</a>
-                <a href="" class="btn btn--third">synonyms</a>
+                <button id="synonyms" class="btn btn--third" onclick="start('synonyms')"  >synonyms</button> 
+                <!-- <a id="synonyms" href="" class="btn btn--third" onclick="start('synonyms')" >synonyms</a> -->
                 <a href="" class="btn btn--third">synonyms</a>
             </div>
             <div class="result-container">
                 <p id="result">Here are some rhymes:</p>
                 <ul id="rhymes"> </ul>
-                <p id="result">Here are some rhymes:</p>
-                <ul id="rhymes"> </ul>
+                <!-- <p id="result">Here are some rhymes:</p>
+                <ul id="rhymes"> </ul> -->
             </div>
         </div>     
     </section>
